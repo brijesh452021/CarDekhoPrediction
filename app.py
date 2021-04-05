@@ -26,7 +26,7 @@ def predict():
     Kms_Driven=request.form['Kms_Driven'];
     Owner=request.form['Owner']
     Number_of_years=int(2020-request.form['Year'])
-    Fuel_Type=request.form['Fuel_Type']
+    Fuel_Type=request.form['Fuel_Type_Petrol']
     if(Fuel_Type=='Petrol'):
       Fuel_Type_Diesel=0
       Fuel_Type_Petrol=1
@@ -37,16 +37,16 @@ def predict():
       Fuel_Type_Diesel=0
       Fuel_Type_Petrol=0
 
-    Seller_Type=request.form['Seller_Type']
+    Seller_Type=request.form['Seller_Type_Individual']
 
-    if(Seller_Type=='Dealer'):
+    if(Seller_Type_Individual=='Dealer'):
       Seller_Type_Individual=0
     else:
       Seller_Type_Individual=1
 
-    Transmission=request.form['Transmission']
+    Transmission=request.form['Transmission_Mannual']
 
-    if(Transmission=='Manual'):
+    if(Transmission=='Mannual'):
       Transmission_Manual=1
     else:
       Transmission_Manual=0
