@@ -15,7 +15,7 @@ CarDekhoPrediction=pickle.load(open('CarDekhoPrediction.pkl','rb'))
 
 from flask import render_template,request
 
-@app.route('/',methods=['Get'])
+@app.route('/',methods=['GET'])
 def home():
   return render_template('index.html')
 
