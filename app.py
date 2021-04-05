@@ -7,17 +7,19 @@ Original file is located at
     https://colab.research.google.com/drive/1F5q5-fd1za80BHzdDmxRsbbjPBouP7Dr
 """
 
-import pickle,requests,sklearn
-from flask import Flask
-
-app=Flask(__name__)
-CarDekhoPrediction=pickle.load(open('CarDekhoPrediction.pkl','rb'))
-
-from flask import render_template,request
-
+from flask import Flask, render_template, request
+import jsonify
+import requests
+import pickle
+import numpy as np
+import sklearn
+from sklearn.preprocessing import StandardScaler
+app = Flask(__name__)
+model = pickle.load(open('random_forest_regression_model.pkl', 'rb'))
 @app.route('/',methods=['GET'])
-def home():
-  return render_template('index.html')
+def Home():
+    return render_template('index.html')
+
 
 @app.route('/predict',methods=['POST'])
 def predict():
