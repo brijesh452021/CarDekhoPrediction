@@ -20,7 +20,7 @@ def home():
   return render_template('index.html')
 
 @app.route('/predict',methods=['POST'])
-def prdict():
+def predict():
   if(request.methods=='POST'):
     Present_Price=float(request.form['Present_Price'])
     Kms_Driven=request.form['Kms_Driven'];
