@@ -54,7 +54,7 @@ def predict():
         prediction=CarDekhoPrediction.predict([[Present_Price,Kms_Driven,Owner,
         Number_of_years,Fuel_Type_Diesel,Fuel_Type_Petrol,
         Seller_Type_Individual,Transmission_Manual]])
-        output=round(prediction[0])
+        output=round(prediction[0],2)
     
         if(output>0):
             return render_template('index.html',prediction_text="Selling Price: {}".format(output))
