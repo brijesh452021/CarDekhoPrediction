@@ -21,7 +21,7 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict(): 
-    if(request.methods=='POST'):
+    if(request.method=='POST'):
         Present_Price=float(request.form['Present_Price'])
         Kms_Driven=int(request.form['Kms_Driven']);
         Owner=request.form['Owner']
