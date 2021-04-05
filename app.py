@@ -24,6 +24,7 @@ def predict():
   if(request.method=='POST'):
     Present_Price=float(request.form['Present_Price'])
     Kms_Driven=request.form['Kms_Driven'];
+    Kms_Driven2=np.log(Kms_Driven)
     Owner=request.form['Owner']
     Number_of_years=int(2020-request.form['Year'])
     Fuel_Type=request.form['Fuel_Type_Petrol']
@@ -51,7 +52,7 @@ def predict():
     else:
       Transmission_Manual=0
 
-    prediction=CarDekhoPrediction.predict([[Present_Price,Kms_Driven,Owner,
+    prediction=CarDekhoPrediction.predict([[Present_Price,Kms_Driven2,Owner,
         Number_of_years,Fuel_Type_Diesel,Fuel_Type_Petrol,
         Seller_Type_Individual,Transmission_Manual]])
     output=round(prediction[0],2)
